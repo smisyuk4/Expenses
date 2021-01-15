@@ -1,4 +1,4 @@
-function createRangePerPeriod(chat_id) {
+function createReportPerPeriod(chat_id) {
   list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList2);
 
   //поиск нижней границы диапазона
