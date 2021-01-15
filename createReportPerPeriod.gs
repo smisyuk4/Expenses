@@ -12,7 +12,7 @@ function createReportPerPeriod(chat_id) {
     }while(list.getRange(topPoint, 2).getBackground() !== "#ffff00")
   var dateA = new Date(list.getRange(topPoint+1, 1).getValue()).toLocaleDateString(locale, dateOptions);
 
-  var dateLine = 'За период с ' + dateA + ' по ' + dateB + ' \n' + 'расходы составили:\n';
+  var dateLine = 'с ' + dateA + ' по ' + dateB + ' \n' + 'расходы составили:\n';
 
   //формирование имени ячеек диапазона и подсчёт суммы по столбцам
   var longTxt = '';
