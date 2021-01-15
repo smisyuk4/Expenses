@@ -4,6 +4,8 @@ var webAppURL = 'https://script.google.com/macros/s/*****/exec';
 var idSheet = '*';
 var nameList1 = 'Лист1';
 var nameList2 = 'Лист2';
+var nameList3 = 'Статистика';
+var nameList4 = 'Exeption';
 
 var categoryBase = {
       supermarket : '\uD83D\uDED2 \uD83E\uDD51 супермаркет, еда, продукты \n', //2
