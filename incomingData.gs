@@ -6,18 +6,15 @@ function incomingData(contents) {
   if (contents.callback_query){
       answer = contents.callback_query.data;
       chat_id = contents.callback_query.from.id;
-      message_id = contents.callback_query.message.message_id;
-      text = contents.callback_query.message.text;
+      message_id = contents.callback_query.message.message_id;      
 
-      list.getRange(2, 1).setValue(answer); 
-      list.getRange(2, 2).setValue(chat_id); 
-      list.getRange(2, 3).setValue(message_id); 
-      list.getRange(2, 4).setValue(text); 
-
-      //удаление кнопок из сообщения
-      editMessageText(chat_id, text, message_id, keyBoard = {inline_keyboard: []});
-
-      
+      if (answer == 'month'){        
+        editMessageText(chat_id, 'За прошлый месяц', message_id, keyBoard = {inline_keyboard: []});
+        sendText(chat_id, 'пока не могу показать этот отчёт \uD83D\uDE22');
+      } else if (answer == 'period') {
+        editMessageText(chat_id, 'За текущий период', message_id, keyBoard = {inline_keyboard: []});
+        createReportPerPeriod(chat_id);
+      }      
   } else if (contents.message){
      chat_id = contents.message.chat.id;
 
@@ -25,7 +22,7 @@ function incomingData(contents) {
      if (contents.message.text.toLowerCase() == '/report' ||
         contents.message.text.toLowerCase() == 'отчёт' ||
         contents.message.text.toLowerCase() == 'отчет'){        
-        sendMessage(chat_id, 'За какой период?', keyboard_inline);
+        sendMessage(chat_id, 'За какой период сформировать отчёт?', keyboard_inline);
       
       } else if (contents.message.text.toLowerCase() == '/category'){
         var categoryList = '';
