@@ -1,4 +1,4 @@
-function sortData(today, textFromUser) {  
+function sortData(today, chat_id, textFromUser) {  
   var list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList2);
   var lastRow = list.getLastRow();
   
@@ -33,4 +33,5 @@ function sortData(today, textFromUser) {
   } 
 
       finishMonth(today, list, lastRow);
+      sendText(chat_id, '\uD83D\uDC4C');  
 }
