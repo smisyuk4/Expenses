@@ -31,12 +31,7 @@ function incomingData(contents) {
         }
         
         var text = encodeURIComponent(categoryList);        
-        var createLink = "https://api.telegram.org/bot" + idBot + "/sendMessage?chat_id=" + chat_id + "&text=" + text;          
-        try{
-          var loadLink = UrlFetchApp.fetch(createLink);
-        } catch (e){
-          SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(1, 1).setValue(e); 
-        }
+        sendText(chat_id, text);        
 
       //передаёт данные для записи в таблицу и хранения
       } else {  
