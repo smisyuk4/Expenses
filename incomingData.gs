@@ -10,7 +10,7 @@ function incomingData(contents) {
 
       if (answer == 'month'){        
         editMessageText(chat_id, 'За прошлый месяц', message_id, keyBoard = {inline_keyboard: []});
-        sendText(chat_id, 'пока не могу показать этот отчёт \uD83D\uDE22');
+        createReportPerMonth(chat_id);        
       } else if (answer == 'period') {
         editMessageText(chat_id, 'За текущий период', message_id, keyBoard = {inline_keyboard: []});
         createReportPerPeriod(chat_id);
