@@ -1,6 +1,6 @@
 function createReportPerMonth(chat_id){
   list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList3);
-  
+  //chat_id = '475321747';
   //поиск нижней желтой строки (<----- Значения за месяц)
   var bottomPoint = list.getLastRow();     
   while(list.getRange(bottomPoint, 2).getBackground() !== "#ffff00"){
@@ -15,7 +15,7 @@ function createReportPerMonth(chat_id){
     }while(list.getRange(topPoint, 2).getBackground() !== "#ffff00")
   } else {
 
-    sendText(chat_id, 'Нет данных \uD83D\uDE31');
+    sendText(chat_id, 'нет данных \uD83D\uDE31');
   }
 
   var date = new Date(list.getRange(bottomPoint-1, 1).getValue());
@@ -65,11 +65,5 @@ function createReportPerMonth(chat_id){
   var sumLine = 'Всего: ' + totalSum + ' шек';    
 
   var text = encodeURIComponent(dateLine + txt + sumLine);        
-  var createLink = "https://api.telegram.org/bot" + idBot + "/sendMessage?chat_id=" + chat_id + "&text=" + text;          
-  try{
-    var loadLink = UrlFetchApp.fetch(createLink);
-  } catch (e){
-    SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(1, 1).setValue(e); 
-  }
-
+  sendText(chat_id, text);  
 }
