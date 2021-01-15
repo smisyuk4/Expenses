@@ -38,7 +38,7 @@ function incomingData(contents) {
         try{
           var loadLink = UrlFetchApp.fetch(createLink);
         } catch (e){
-          SpreadsheetApp.openById(idSheet).getSheetByName('Exeption').getRange(1, 1).setValue(e); 
+          SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(1, 1).setValue(e); 
         }
 
       //передаёт данные для записи в таблицу и хранения
@@ -56,7 +56,7 @@ function incomingData(contents) {
                   list.getRange(lastRow+1, 1).setValue(today);  
                   list.getRange(lastRow+1, 2).setValue(firstNameUser);  
                   list.getRange(lastRow+1, 3).setValue(textFromUser);    
-                  sortData(today, textFromUser);                  
+                  sortData(today, chat_id, textFromUser);                  
             } else {              
                   list.getRange(2, 6).setValue("текст без цифр: " + textFromUser);       
                   sendText(chat_id, 'Не верные данные \uD83D\uDE22');                               
