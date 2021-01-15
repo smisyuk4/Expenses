@@ -12,5 +12,5 @@
       }
     };
     try {UrlFetchApp.fetch('https://api.telegram.org/bot' + idBot + '/', data)}
-    catch (e) { SpreadsheetApp.openById(idSheet).getSheetByName('Exeption').getRange(1, 1).setValue(e); }
+    catch (e) { SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(1, 1).setValue(e); }
   }
