@@ -1,5 +1,6 @@
 function createReportPerPeriod(chat_id) {
   list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList2);
+  //chat_id = '475321747';
 
   //поиск нижней границы диапазона
   var bottomPoint = list.getLastRow();
@@ -40,11 +41,6 @@ function createReportPerPeriod(chat_id) {
 
   var sumLine = 'Всего: ' + totalSum + ' шек';
      
-  var text = encodeURIComponent(dateLine + longTxt + sumLine);        
-  var createLink = "https://api.telegram.org/bot" + idBot + "/sendMessage?chat_id=" + chat_id + "&text=" + text;          
-  try{
-    var loadLink = UrlFetchApp.fetch(createLink);
-  } catch (e){
-    SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(1, 1).setValue(e); 
-  }
+  var text = encodeURIComponent(dateLine + longTxt + sumLine);    
+  sendText(chat_id, text);  
 }
