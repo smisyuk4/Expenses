@@ -15,13 +15,14 @@ var categoryBase = {
       rent : '\uD83C\uDFE0 \uD83D\uDCDE комуналка, квартира, аренда, свет, вода, телефон, интернет \n', //3
       transport : '\uD83D\uDE8C \u2708\uFE0F транспорт, автобус, рав-кав, доставка, самолёт \n',//4
       veterinary : '\uD83D\uDC3E \uD83D\uDC36 ветеринария, собака, чио, корм \n',//5
-      eatingOut : '\uD83C\uDF55 \uD83C\uDF54 пицерия, кафе, ресторан ,бар, пикник \n',//6
+      eatingOut : '\uD83C\uDF55 \uD83C\uDF54 пиццерия, кафе, ресторан ,бар, пикник \n',//6
       hospital : '\uD83D\uDE91 \uD83D\uDC89 больница, лечение, аптека, клалит \n',//7
-      menage : '\uD83E\uDE91 \uD83D\uDCFA хозяйство, мебель, икея, химия, электроника \n',//8
+      menage : '\uD83D\uDECF\uFE0F \uD83D\uDCFA хозяйство, мебель, икея, химия, электроника \n',//8
       presents : '\uD83C\uDF81 \uD83D\uDC8D подарки \n',//9  
-      dress : '\uD83D\uDC55 \uD83D\uDC62 одежда \n',//10
+      dress : '\uD83D\uDC55 \uD83D\uDC62 одежда, обувь, аксесуары \n',//10
       others : '\uD83E\uDD14 \uD83D\uDCAD прочее \n'//11
   }
+
 
 //Установка веб хука после создания бота. Сделать только 1 раз
 function setWebHook(){
