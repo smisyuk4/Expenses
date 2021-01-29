@@ -6,6 +6,7 @@ var nameList1 = 'Лист1';
 var nameList2 = 'Лист2';
 var nameList3 = 'Статистика';
 var nameList4 = 'Exeption';
+var nameList5 = 'Чеки';
 const locale = 'he-IL';
 const dateOptions =  {timeZone:'Asia/Jerusalem',year: 'numeric', month: '2-digit', day: '2-digit'};
 
