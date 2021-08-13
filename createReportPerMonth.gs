@@ -1,5 +1,5 @@
 function createReportPerMonth(chat_id){
-  list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList3);
+  list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList2);
   //chat_id = '475321747';
   //поиск нижней желтой строки (<----- Значения за месяц)
   var bottomPoint = list.getLastRow();     
