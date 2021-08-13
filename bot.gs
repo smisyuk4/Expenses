@@ -7,11 +7,8 @@ var nameList2 = 'Лист2';
 var nameList3 = 'Статистика';
 var nameList4 = 'Exeption';
 var nameList5 = 'Чеки';
-var nameList6 = 'Users';
 const locale = 'he-IL';
 const dateOptions =  {timeZone:'Asia/Jerusalem',year: 'numeric', month: '2-digit', day: '2-digit'};
-
-var user = '******';
 
 var categoryBase = {
       supermarket : '\uD83D\uDED2 \uD83E\uDD51 супермаркет, еда, продукты \n', //2
