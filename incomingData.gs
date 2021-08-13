@@ -1,7 +1,7 @@
 function incomingData(contents) { 
   list = SpreadsheetApp.openById(idSheet).getSheetByName(nameList1);
-  SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(3, 1).setValue(contents);   
-
+  SpreadsheetApp.openById(idSheet).getSheetByName(nameList4).getRange(3, 1).setValue(contents);     
+  
   //проверяет на ответ с кнопок
   if (contents.callback_query){
       answer = contents.callback_query.data;
@@ -35,13 +35,21 @@ function incomingData(contents) {
         sendMessage(chat_id, 'За какой период сформировать отчёт?', keyboard_inline);
       
       } else if (contents.message.text.toLowerCase() == '/category'){
-        var categoryList = '';
-        for (var key in categoryBase){
-            categoryList += categoryBase[key];
+        var categoryList1 = '';
+        for (var key in categoryBase1){
+            categoryList1 += categoryBase1[key];
         }
         
-        var text = encodeURIComponent(categoryList);        
-        sendText(chat_id, text);        
+        var text1 = encodeURIComponent(categoryList1);        
+        sendText(chat_id, text1);        
+        
+        var categoryList2 = '';
+        for (var key in categoryBase2){
+            categoryList2 += categoryBase2[key];
+        }
+        
+        var text2 = encodeURIComponent(categoryList2);        
+        sendText(chat_id, text2); 
 
       //передаёт данные для записи в таблицу и хранения     
       } else {  
